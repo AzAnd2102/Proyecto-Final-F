@@ -1,8 +1,7 @@
 import React, {Fragment, useState} from 'react';
-import { useForm } from "react-hook-form";
 
 const FormAltaMenu = () => {
-  const { register, handleSubmit } = useForm();
+
   const baseURL = 'http://localhost:8000';
 
   const [datos, setDatos] = useState({
@@ -11,8 +10,9 @@ const FormAltaMenu = () => {
     precio: 0,
     detalle: '',
     ingredientes: [],
-    categoria: ''
-  })
+    categoria: '',
+    imagen: ''
+  });
 
   const handleInputChange = (event) => {
     setDatos({
@@ -57,6 +57,9 @@ const FormAltaMenu = () => {
             </div>
             <div className="col-md-3">
                 <input type="text" placeholder="Categoria" className="form-control" onChange={handleInputChange} name="categoria"></input>
+            </div>
+            <div className="col-md-3">
+                <input type="text" placeholder="Imagen" className="form-control" onChange={handleInputChange} name="imagen"></input>
             </div>
             <button type="submit" className="btn btn-primary">Enviar</button>
         </form>

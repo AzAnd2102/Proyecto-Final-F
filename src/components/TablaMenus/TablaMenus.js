@@ -20,7 +20,7 @@ const TablaMenus = () => {
       <button type="button" className="btn btn-primary" onClick={obtenerDatos}>Enviar</button>
       <div className='d-flex justify-content-evenly'>
           {
-            datos.map(menu => <Card nombre={menu.nombre} categoria={menu.categoria} precio={menu.precio}/>)
+            datos.map(menu => <Card id={menu._id} nombre={menu.nombre} categoria={menu.categoria} imagen={menu.imagen} precio={menu.precio} />)
           }
       </div>
     </>
