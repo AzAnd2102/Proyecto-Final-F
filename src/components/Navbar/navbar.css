@@ -1,8 +1,26 @@
+.navbar-brand {
+  font-size: 30px;
+}
+
+.navbar {
+  border-bottom: 1px solid black;
+}
 
 .image-logo {
   height: 60px;
 }
 
 .logo-usuario {
-  height: 60px;
+  height: 40px;
+}
+
+.logo-carro {
+  height: 40px;
+}
+
+.nav-icons-size {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
