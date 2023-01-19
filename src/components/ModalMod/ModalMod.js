@@ -1,26 +1,30 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import './modalMod.css'
+import FormAltaMenu from '../FormAltaMenu/FormAltaMenu';
 import FormModMenu from '../FormModMenu/FormModMenu';
+import InfoMenu from '../InforMenu/InfoMenu';
 
-const ModalMod = ({show, handleClose, id, nombrePlato}) => {
+const ModalMod = ({show, handleClose, id, nombrePlato, modalAux}) => {
+
+  let componente = null;
+
+  if(modalAux === 'altaMenu'){
+    componente = <FormAltaMenu/>
+  }else if (modalAux === 'modificarMenu') {
+    componente = <FormModMenu id={id}/>
+  }else if (modalAux === 'mostrarMenu'){
+    componente = <InfoMenu id={id}/>
+  }
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal className="modalAM"size="lg" show={show} onHide={handleClose}>
+        <Modal.Header closeButton closeVariant='white'>
           <Modal.Title>{nombrePlato}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <FormModMenu id={id}/>
+          {componente}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from '../CardMenu/CardMenu';
 
 const TablaMenus = () => {
@@ -11,14 +11,13 @@ const TablaMenus = () => {
     const menus = await respuesta.json()
 
     setDatos(menus)
-    console.log(datos)
-    //console.log(menus)
   }
+
+  useEffect(()=>{obtenerDatos()},[])
 
   return (
     <>
-      <button type="button" className="btn btn-primary" onClick={obtenerDatos}>Enviar</button>
-      <div className='d-flex justify-content-evenly'>
+      <div className='d-flex justify-content-evenly row m-0 p-0'>
           {
             datos.map(menu => <Card id={menu._id} nombre={menu.nombre} categoria={menu.categoria} imagen={menu.imagen} precio={menu.precio} />)
           }

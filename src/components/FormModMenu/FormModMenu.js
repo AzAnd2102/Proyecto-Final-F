@@ -1,20 +1,20 @@
-import React, { Fragment, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
+let ingredientes = '';
 
 const FormModMenu = (props) => {
 
-  console.log('hola ' +props.id)
-
   const baseURL = 'http://localhost:8000';
+  const [datosMenu, setDatosMenu] = useState([]);
 
-  const obtenerDatos = async () => {
+   const obtenerDatos = async () => {
     const respuesta = await fetch(`${baseURL}/menus/obtenerUnMenu/${props.id}`)
     const menus = await respuesta.json()
-
-    console.log(menus)
+    setDatosMenu(menus);
+    ingredientes = (menus.ingredientes).toString()
   }
 
   useEffect(()=>{
-    obtenerDatos()
+    obtenerDatos();
   },[])
   
 
@@ -36,8 +36,6 @@ const FormModMenu = (props) => {
     })
   }
 
-  console.log('holla ' +props.id)
-
   const modificarDatos = async (event) => {
     event.preventDefault()
     console.log('Entro aqui ' + datos.nombre)
@@ -48,38 +46,42 @@ const FormModMenu = (props) => {
         "Content-Type" : "application/json"
       }
     })
-    console.log(respuesta)
-
   }
   
-
-  console.log('holla ' +props.id)
   return (
     <div>
-      <p>Hola</p>
-      <form className="row" onSubmit={modificarDatos}>
-        <div className="col-md-3">
-            <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre"></input>
+      <form className="row m-2 p-0" onSubmit={modificarDatos}>
+        <div className="col-md-4 mt-1">
+          <label for="nombre" class="form-label mb-0">Nombre</label>
+          <input type="text" placeholder="Nombre" className="form-control" onChange={handleInputChange} name="nombre" value={datosMenu.nombre}></input>
         </div>
-        <div className="col-md-3">
-            <input type="text" placeholder="Estado" className="form-control" onChange={handleInputChange} name="estado"></input>
+        <div className="col-md-4 mt-1">
+          <label for="estado" class="form-label mb-0">Estado</label>
+          <input type="text" placeholder="Estado" className="form-control" onChange={handleInputChange} name="estado" value={datosMenu.estado}></input>
         </div>
-        <div className="col-md-3">
-            <input type="number" placeholder="Precio" className="form-control" onChange={handleInputChange} name="precio"></input>
+        <div className="col-md-4 mt-1">
+          <label for="precio" class="form-label mb-0">Precio</label>
+          <input type="number" placeholder="Precio" className="form-control" onChange={handleInputChange} name="precio" value={datosMenu.precio}></input>
         </div>
-        <div className="col-md-3">
-            <input type="text" placeholder="Detalle" className="form-control" onChange={handleInputChange} name="detalle"></input>
+        <div className="col-md-8 mt-3">
+          <label for="detalle" class="form-label mb-0">Detalle</label>
+          <input type="text" placeholder="Detalle" className="form-control" onChange={handleInputChange} name="detalle" value={datosMenu.detalle}></input>
         </div>
-        <div className="col-md-3">
-            <input type="text" placeholder="Ingredientes" className="form-control" onChange={handleInputChange} name="ingredientes"></input>
+        <div className="col-md-4 mt-3">
+          <label for="categoria" class="form-label mb-0">Categoria</label>
+          <input type="text" placeholder="Categoria" className="form-control" onChange={handleInputChange} name="categoria" value={datosMenu.categoria}></input>
         </div>
-        <div className="col-md-3">
-            <input type="text" placeholder="Categoria" className="form-control" onChange={handleInputChange} name="categoria"></input>
+        <div className="col-md-6 mt-3">
+          <label for="ingredientes" class="form-label mb-0">Ingredientes</label>
+          <input type="text" placeholder="Ingredientes" className="form-control" onChange={handleInputChange} name="ingredientes" value={ingredientes}></input>
         </div>
-        <div className="col-md-3">
-            <input type="text" placeholder="Imagen" className="form-control" onChange={handleInputChange} name="imagen"></input>
+        <div className="col-md-6 mt-3">
+          <label for="imagen" class="form-label mb-0">Imagen</label>
+          <input type="text" placeholder="Imagen" className="form-control" onChange={handleInputChange} name="imagen" value={datosMenu.imagen}></input>
         </div>
-        <button type="submit" className="btn btn-primary">Enviar</button>
+        <div className='col-12 mt-4 d-flex justify-content-end'>
+          <button type="submit" className="btn btn-outline-light">Guardar</button>
+        </div>
     </form>
     </div>
   )
