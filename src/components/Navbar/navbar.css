@@ -12,10 +12,17 @@
 
 .logo-usuario {
   height: 40px;
+  cursor: pointer;
+}
+
+.logo-buscar {
+  height: 40px;
+  cursor: pointer;
 }
 
 .logo-carro {
   height: 40px;
+  cursor: pointer;
 }
 
 .nav-icons-size {
