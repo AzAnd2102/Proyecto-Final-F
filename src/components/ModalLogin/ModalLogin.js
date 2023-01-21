@@ -15,11 +15,8 @@ const ModalLogin = ({ show, handleClose }) => {
         </Modal.Header>
         <Modal.Body>Hacer un form</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="dark rounded-pill" onClick={handleClose}>
+            INGRESAR
           </Button>
         </Modal.Footer>
       </Modal>    

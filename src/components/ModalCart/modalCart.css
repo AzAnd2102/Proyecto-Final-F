@@ -1,0 +1,44 @@
+.cart-modal {
+  width: 350px;
+  min-height: 350px;
+  border: 1px solid black;
+  padding: 30px;
+  position: absolute;
+  left: calc(100% - 350px);
+  top: 85px;
+  background: white;
+}
+
+.cart-modal-content li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cart-modal-content li img {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.food-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.burger {
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.image-delete-btn {
+  height: 30px !important;
+  width: 30px !important;
+}

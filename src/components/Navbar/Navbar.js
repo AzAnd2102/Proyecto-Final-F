@@ -5,6 +5,7 @@ import usuario from "../../assets/icons/usuario.png";
 import buscar from "../../assets/icons/buscar.png";
 import carro from "../../assets/icons/carro.png";
 import ModalLogin from "../ModalLogin/ModalLogin";
+import ModalCart from "../ModalCart/ModalCart";
 
 
 const Navbar = () => {
@@ -13,6 +14,19 @@ const Navbar = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  const [showCartModal, setShowCartModal] = useState(false);
+
+  const handleShowModalCart = () => {
+    if (showCartModal) {
+      setShowCartModal(false);
+    } else {
+      setShowCartModal(true);
+    }
+  };
+
+
 
   return (
     <>
@@ -35,8 +49,9 @@ const Navbar = () => {
                 <img className='logo-buscar nav-icons-size mx-2' src={buscar} alt='buscar'/>
               </div>  
                 
-              <div className="modal-carro">
+              <div className="modal-carro" onClick={handleShowModalCart}>
                 <img className='logo-carro mx-2' src={carro} alt='carro'/>
+                {showCartModal ? <ModalCart /> : null}
               </div>
             
             </div>
