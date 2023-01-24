@@ -19,7 +19,7 @@ const TablaMenus = () => {
     <>
       <div className='d-flex justify-content-evenly row m-0 p-0'>
           {
-            datos.map(menu => <Card id={menu._id} nombre={menu.nombre} categoria={menu.categoria} imagen={menu.imagen} precio={menu.precio} />)
+            datos.map(menu => <Card id={menu._id} nombre={menu.nombre} categoria={menu.categoria} imagen={menu.imagen} precio={menu.precio} estado={menu.estado}/>)
           }
       </div>
     </>
