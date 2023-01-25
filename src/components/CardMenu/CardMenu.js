@@ -65,19 +65,23 @@ const Card =(props) => {
   return (
     <>
       <div className='d-flex justify-content-center mb-5 col-lg-4 col-md-6 col-sm-12 mt-5'>
-        <div className="card border-none animate__animated animate__fadeInLeft" style={{width: "18rem"}}>
-          <img src={props.imagen} className="card-img-top" alt="..." />
-          <div className="card-body mt-3 p-0">
-            <h5 className="card-title text-center fw-bold">{props.nombre} {props.estado === "Disponible" ? <i class="bi bi-check-circle-fill"></i> : <i class="bi bi-x-circle"></i>}</h5>
-            <div className='row m-0 p-0'>
-              <p className="card-text col-7">{props.categoria}</p>
-              <p className="card-text col-5 text-end">${props.precio}</p>
+        <div className="card animate__animated animate__fadeInLeft" style={{width: "18rem"}}>
+          <div className='d-flex position-relative m-0 p-0'>
+            <img src={props.imagen} className="card-img-top" alt="..." />
+            <div className='position-absolute p-2 borderDiv d-flex justify-content-center top-0 start-100 translate-middle'>
+              {props.estado === "Disponible" ? <i class="bi bi-check-circle text-white"></i> : <i class="bi bi-x-circle text-white"></i>}
             </div>
           </div>
-          <div className='d-grid gap-3 d-flex justify-content-center mb-3'>
-            <button type="button" className="btn btn-outline-warning" onClick={handleShow}><i class="bi bi-pencil"></i></button>
-            <button type="button" className="btn btn-outline-danger" onClick={eliminarMenu}><i class="bi bi-trash3"></i></button>
-            <button type="button" className="btn btn-outline-info" onClick={handleShow2}><i class="bi bi-eye"></i></button>
+          <div className="card-body mt-4 p-0">
+            <div className='row m-0 p-0'>
+              <h5 className="card-title fw-bold col-8">{props.nombre}</h5>
+              <p className="card-text col-4 text-end">${props.precio}</p>
+            </div>
+          </div>
+          <div className=' m-3 btn-group'>
+            <button type="button" className="btn btn1 btn-outline-warning" onClick={handleShow}><i class="bi bi-pencil"></i></button>
+            <button type="button" className="btn btn1 btn-outline-danger" onClick={eliminarMenu}><i class="bi bi-trash3"></i></button>
+            <button type="button" className="btn btn1 btn-outline-info" onClick={handleShow2}><i class="bi bi-eye"></i></button>
           </div>
         </div>
       </div>
