@@ -85,8 +85,8 @@ const Card =(props) => {
           </div>
         </div>
       </div>
-      <ModalMod show={show} handleClose={handleClose} id={props.id} nombrePlato={props.nombre} modalAux={'modificarMenu'}/>
-      <ModalMod show={show2} handleClose={handleClose2} id={props.id} nombrePlato={props.nombre} modalAux={'mostrarMenu'}/>
+      <ModalMod show={show} handleClose={handleClose} id={props.id} nombre={props.nombre} modalAux={'modificarMenu'}/>
+      <ModalMod show={show2} handleClose={handleClose2} id={props.id} nombre={props.nombre} modalAux={'mostrarMenu'}/>
     </>
   )
 }
