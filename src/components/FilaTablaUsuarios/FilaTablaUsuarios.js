@@ -63,12 +63,12 @@ function FilaTablaUsuarios({id,email,nombre,apellido,estado,rol}) {
         <td className='align-middle'>{id}</td>
         <td className='align-middle'>{nombre}</td>
         <td className='align-middle'>{apellido}</td>
-        <td className='align-middle'>{estado === "activo" ? <i class="bi bi-person-check fs-4"></i> : <i class="bi bi-person-dash fs-4"></i>}</td>
+        <td className='align-middle'>{estado === "activo" ? <i className="bi bi-person-check fs-4"></i> : <i className="bi bi-person-dash fs-4"></i>}</td>
         <td className='align-middle'>{email}</td>
-        <td className='align-middle'>{rol === "admin" ? <i class="bi bi-person-vcard fs-4"></i> : <i class="bi bi-person fs-4"></i>}</td>
+        <td className='align-middle'>{rol === "admin" ? <i className="bi bi-person-vcard fs-4"></i> : <i className="bi bi-person fs-4"></i>}</td>
         <td className='text-center'>
-          <button type="button" className="btn btn1 btn-outline-warning m-1" onClick={handleShow}><i class="bi bi-pencil"></i></button>
-          <button type="button" className="btn btn1 btn-outline-danger m-1" onClick={eliminarUsuario}><i class="bi bi-trash3"></i></button>
+          <button type="button" className="btn btn1 btn-outline-warning m-1" onClick={handleShow}><i className="bi bi-pencil"></i></button>
+          <button type="button" className="btn btn1 btn-outline-danger m-1" onClick={eliminarUsuario}><i className="bi bi-trash3"></i></button>
         </td>
       </tr>
       <ModalMod show={show} handleClose={handleClose} id={id} nombre={`${nombre} ${apellido}`} modalAux={'modificarUsuario'}/>

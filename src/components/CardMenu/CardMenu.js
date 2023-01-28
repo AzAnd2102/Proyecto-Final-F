@@ -69,7 +69,7 @@ const Card =(props) => {
           <div className='d-flex position-relative m-0 p-0'>
             <img src={props.imagen} className="card-img-top" alt="..." />
             <div className='position-absolute p-2 borderDiv d-flex justify-content-center top-0 start-100 translate-middle'>
-              {props.estado === "Disponible" ? <i class="bi bi-check-circle text-white"></i> : <i class="bi bi-x-circle text-white"></i>}
+              {props.estado === "Disponible" ? <i className="bi bi-check-circle text-white"></i> : <i className="bi bi-x-circle text-white"></i>}
             </div>
           </div>
           <div className="card-body mt-4 p-0">
@@ -79,9 +79,9 @@ const Card =(props) => {
             </div>
           </div>
           <div className=' m-3 btn-group'>
-            <button type="button" className="btn btn1 btn-outline-warning" onClick={handleShow}><i class="bi bi-pencil"></i></button>
-            <button type="button" className="btn btn1 btn-outline-danger" onClick={eliminarMenu}><i class="bi bi-trash3"></i></button>
-            <button type="button" className="btn btn1 btn-outline-info" onClick={handleShow2}><i class="bi bi-eye"></i></button>
+            <button type="button" className="btn btn1 btn-outline-warning" onClick={handleShow}><i className="bi bi-pencil"></i></button>
+            <button type="button" className="btn btn1 btn-outline-danger" onClick={eliminarMenu}><i className="bi bi-trash3"></i></button>
+            <button type="button" className="btn btn1 btn-outline-info" onClick={handleShow2}><i className="bi bi-eye"></i></button>
           </div>
         </div>
       </div>

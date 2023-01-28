@@ -76,7 +76,7 @@ const FormModMenu = (props) => {
     <Fragment>
       <Form className='row m-0 p-2' onSubmit={handleSubmit(modificarDatos)}>
         <Form.Group className='col-md-4 mt-1'>
-          <Form.Label for="estado">Nombre</Form.Label>
+          <Form.Label>Nombre</Form.Label>
           <Form.Control
             placeholder="Ingrese nombre del plato"
             className="input"
@@ -109,9 +109,9 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-4 mt-1">
-          <Form.Label for="estado">Estado</Form.Label>
+          <Form.Label>Estado</Form.Label>
           <Form.Select 
-            class="form-select form-control"
+            className="form-select form-control"
             name="estado"
             defaultValue={datosMenu.estado}
             {...register('estado')}>
@@ -123,7 +123,7 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-4 mt-1">
-          <Form.Label for="precio">Precio</Form.Label>
+          <Form.Label>Precio</Form.Label>
           <Form.Control
             placeholder="Ingrese el precio del plato"
             className="input"
@@ -156,7 +156,7 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-8 mt-3">
-          <Form.Label for="detalle">Detalle</Form.Label>
+          <Form.Label>Detalle</Form.Label>
           <Form.Control
             placeholder="Ingrese el detalle del plato"
             className="input"
@@ -189,7 +189,7 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-4 mt-3">
-          <Form.Label for="categoria">Categoria</Form.Label>
+          <Form.Label>Categoria</Form.Label>
           <Form.Select 
             name="categoria" 
             defaultValue={datosMenu.categoria}
@@ -205,7 +205,7 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-6 mt-3">
-          <Form.Label for="ingredientes">Ingredientes</Form.Label>
+          <Form.Label>Ingredientes</Form.Label>
           <Form.Control
             placeholder="Ingrese los ingredientes del plato"
             className="input"
@@ -241,7 +241,7 @@ const FormModMenu = (props) => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-6 mt-3">
-          <Form.Label for="imagen">Imagen</Form.Label>
+          <Form.Label>Imagen</Form.Label>
           <Form.Control
             placeholder="Ingrese la imagen del plato"
             className="input"

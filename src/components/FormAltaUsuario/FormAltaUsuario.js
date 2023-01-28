@@ -168,9 +168,9 @@ function FormAltaUsuario() {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-md-3 mt-2">
-          <Form.Label for="estado">Estado</Form.Label>
+          <Form.Label>Estado</Form.Label>
           <Form.Select 
-            class="form-select form-control"
+            className="form-select form-control"
             name="estado"
             {...register('estado')}>
             <option value="activo">Activo</option>
@@ -193,7 +193,7 @@ function FormAltaUsuario() {
           </Form.Text>
         </Form.Group>
         <Form.Group className="col-12 mt-3">
-          <Form.Label for="ingredientes">Email</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             placeholder="Ingrese el email del Usuario"
             className="email"
