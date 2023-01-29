@@ -13,7 +13,7 @@ function AdminUsuarios() {
       <h1 className='text-center my-5'>Administrar Usuarios</h1>
       <button type="button" className="btn btn-outline-dark mx-5" onClick={handleShow2}><i className="bi bi-person-add mx-1 fs-6"> Agregar </i></button>
       <TablaUsuarios/>
-      <ModalMod show={show2} handleClose={handleClose2} nombrePlato='Alta Usuario' modalAux='altaUsuario'/>
+      <ModalMod show={show2} handleClose={handleClose2} nombre='Alta Usuario' modalAux='altaUsuario'/>
     </div>
   )
 }

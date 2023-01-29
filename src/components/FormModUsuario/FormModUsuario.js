@@ -75,6 +75,7 @@ function FormModUsuario({id}) {
           'El usuario se modificó con éxito',
           'success'
         )
+
         window.location.reload();
       }
     }
@@ -83,6 +84,18 @@ function FormModUsuario({id}) {
   return (
     <Fragment>
       <Form className='row m-0 p-2' onSubmit={handleSubmit(modificarDatos)}>
+      <Form.Group className='col-12 mt-1'>
+          <Form.Label>ID</Form.Label>
+          <Form.Control
+            placeholder="ID"
+            className="input"
+            name="id"
+            minLength={2}
+            maxLength={15}
+            defaultValue={datosUsuario._id}
+            disabled
+          ></Form.Control>
+        </Form.Group>
         <Form.Group className='col-md-4 mt-1'>
           <Form.Label>Nombre</Form.Label>
           <Form.Control

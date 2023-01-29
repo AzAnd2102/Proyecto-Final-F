@@ -12,7 +12,7 @@ function AdminMenus() {
       <h1 className='text-center my-5'>Administrar Menús</h1>
       <button type="button" className="btn btn-outline-dark mx-5" onClick={handleShow}><i className="bi bi-plus-circle mx-1 fs-6"> Agregar </i></button>
       <TablaMenus/>
-      <ModalMod show={show} handleClose={handleClose} nombrePlato='Alta Menu' modalAux='altaMenu'/>
+      <ModalMod show={show} handleClose={handleClose} nombre='Alta Menu' modalAux='altaMenu'/>
     </>
   )
 }
