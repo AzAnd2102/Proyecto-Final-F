@@ -6,6 +6,7 @@ import FormModMenu from '../FormModMenu/FormModMenu';
 import InfoMenu from '../InforMenu/InfoMenu';
 import FormModUsuario from '../FormModUsuario/FormModUsuario';
 import FormAltaUsuario from '../FormAltaUsuario/FormAltaUsuario';
+import InforCarrito from '../InfoCarrito/InforCarrito';
 
 const ModalMod = ({show, handleClose, id, nombre, modalAux}) => {
 
@@ -21,6 +22,8 @@ const ModalMod = ({show, handleClose, id, nombre, modalAux}) => {
     componente = <FormModUsuario id={id}/>
   }else if (modalAux === 'altaUsuario') {
     componente = <FormAltaUsuario/>
+  }else if (modalAux === 'mostrarCarrito') {
+    componente = <InforCarrito carrito={id}/>
   }
   return (
     <>
