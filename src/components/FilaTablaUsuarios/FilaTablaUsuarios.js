@@ -41,9 +41,17 @@ function FilaTablaUsuarios({id,email,nombre,apellido,estado,rol}) {
         )
       }
     })
+    let token = localStorage.getItem('token');
 
     if (bandera) {
-      const respuesta = await fetch(`${baseURL}/usuarios/borrarUsuario/${id}`, { method: 'DELETE' })
+        const respuesta = await fetch(`${baseURL}/usuarios/borrarUsuario/${id}`,{   method: 'DELETE',
+        body: JSON.stringify(
+          {"token": token}
+        ),
+        headers:{
+          "Content-Type" : "application/json"
+        }
+      })
       const usuarioBorrado = await respuesta.json();
       console.log(usuarioBorrado)
       await swalWithBootstrapButtons.fire(
