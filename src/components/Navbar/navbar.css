@@ -23,11 +23,19 @@
 .logo-carro {
   height: 40px;
   cursor: pointer;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+.logo-admin {
+  height: 40px;
+  cursor: pointer;
 }
 
 .nav-icons-size {
   padding-left: 10px;
   padding-right: 10px;
+  border-right: 1px solid black;
   border-left: 1px solid black;
   border-right: 1px solid black;
 }

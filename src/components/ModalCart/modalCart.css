@@ -1,36 +1,37 @@
 .cart-modal {
-  width: 350px;
-  min-height: 350px;
+  width: 300px;
+  min-height: auto;
   border: 1px solid black;
-  padding: 30px;
+  padding: 10px;
   position: absolute;
-  left: calc(100% - 350px);
-  top: 85px;
+  left: calc(100% - 305px);
+  top: 65px;
   background: white;
 }
 
 .cart-modal-content li {
-  display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .cart-modal-content li img {
   height: 50px;
   width: 50px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .food-content {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.295);
   width: 100%;
 }
 
-.burger {
+.food-icon {
   display: flex;
   align-items: center;
 }
+
 
 .delete-btn {
   background-color: transparent;

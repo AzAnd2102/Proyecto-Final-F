@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import "./navbar.css";
 import logo from "../../assets/icons/logo.png";
 import usuario from "../../assets/icons/usuario.png";
-import buscar from "../../assets/icons/buscar.png";
+import casa from "../../assets/icons/casa.png"
 import carro from "../../assets/icons/carro.png";
+import cerrar_Sesion from "../../assets/icons/cerrar-sesion.png";
+import admin from "../../assets/icons/admin.png"
 import ModalLogin from "../ModalLogin/ModalLogin";
 import ModalCart from "../ModalCart/ModalCart";
 
@@ -26,6 +28,20 @@ const Navbar = () => {
     }
   };
 
+  let token = localStorage.getItem('token');
+  let rol = localStorage.getItem('rol');
+
+  const cerrarSesion = () =>{
+      window.location.reload();
+      localStorage.clear();
+  }
+
+  const redireccion = () => {
+    window.location.href = "/admin";
+  }
+  const redireccionCasa = () => {
+    window.location.href = "/";
+  }
 
 
   return (
@@ -39,18 +55,20 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className='container-fluid d-flex justify-content-end'>
-
               <div className="modal-login" onClick={handleShow}>
-                <img className='logo-usuario mx-2' src={usuario} alt='usuario'/>
+                {token ? null : <img className='logo-usuario mx-2' src={usuario} alt='usuario'/>}
               </div>
-            
-              
-              <div className="buscador">
-                <img className='logo-buscar nav-icons-size mx-2' src={buscar} alt='buscar'/>
+              <div className="cerrarSesion" onClick={cerrarSesion}>
+                {token ? <img className='logo-usuario mx-2' src={cerrar_Sesion} alt='usuario'/> : null}
+              </div>
+              <div className="casa">
+                {rol === "admin" ? <img className='logo-admin nav-icons-size mx-2' src={casa} alt='casa' onClick={redireccionCasa}/> : null}
               </div>  
-                
+              <div className="admin">
+                {rol === "admin" ? <img className='logo-admin mx-2' src={admin} alt='buscar' onClick={redireccion}/> : null}
+              </div> 
               <div className="modal-carro" onClick={handleShowModalCart}>
-                <img className='logo-carro mx-2' src={carro} alt='carro'/>
+                {token ? <img className='logo-carro mx-2' src={carro} alt='carro'/> : null}
                 {showCartModal ? <ModalCart /> : null}
               </div>
             
