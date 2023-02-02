@@ -1,0 +1,45 @@
+.cart-modal {
+  width: 300px;
+  min-height: auto;
+  border: 1px solid black;
+  padding: 10px;
+  position: absolute;
+  left: calc(100% - 305px);
+  top: 65px;
+  background: white;
+}
+
+.cart-modal-content li {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart-modal-content li img {
+  height: 50px;
+  width: 50px;
+  margin-right: 15px;
+}
+
+.food-content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.295);
+  width: 100%;
+}
+
+.food-icon {
+  display: flex;
+  align-items: center;
+}
+
+
+.delete-btn {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.image-delete-btn {
+  height: 30px !important;
+  width: 30px !important;
+}
