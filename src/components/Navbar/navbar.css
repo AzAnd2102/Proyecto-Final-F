@@ -3,7 +3,11 @@
 }
 
 .navbar {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+  box-shadow:
+  0.9px 22.6px 13.7px rgba(0, 0, 0, 0.027),
+  19px 500px 323px rgba(0, 0, 0, 0.07)
+;
 }
 
 .image-logo {

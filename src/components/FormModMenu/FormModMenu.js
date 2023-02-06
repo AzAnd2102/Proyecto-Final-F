@@ -179,7 +179,7 @@ const FormModMenu = (props) => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números y Espacios'
                 }
             })}
@@ -228,7 +228,7 @@ const FormModMenu = (props) => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números, Comas y Espacios'
                 }
             })}

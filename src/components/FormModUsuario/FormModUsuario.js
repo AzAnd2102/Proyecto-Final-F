@@ -120,7 +120,7 @@ function FormModUsuario({id}) {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z\s]+$/i,
+                  value: /^[a-zA-Z\u00C0-\u017F\s]+$/i,
                   message: 'Este campo solo acepta Letras y Espacios'
                 }
             })}
@@ -153,7 +153,7 @@ function FormModUsuario({id}) {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z\s]+$/i,
+                  value: /^[a-zA-Z\u00C0-\u017F\s]+$/i,
                   message: 'Este campo solo acepta Letras y Espacios'
                 }
             })}
