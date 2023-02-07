@@ -83,18 +83,21 @@ const FormRegister = () => {
 
   return (
     <>
-      <div className='w-50 m-auto'>
+      <div className='w-100 m-auto'>
         <div className='d-flex justify-content-center mt-5'>
           <img className=' image-logo' src={logo} alt='modal-logo'/>
         </div>
         <div className='text-center m-0 p-0'>
           <h3>¡Bienvenido!</h3>
         </div>
+        <div className='d-flex justify-content-center'>
+
         <Form className='row m-0 p-2' onSubmit={handleSubmit(procesarFormulario)}>
           <Form.Group className='col-md-6 mt-2'>
             <Form.Label>Nombre</Form.Label>
             <Form.Control
-              placeholder="Ingrese nombre del Usuario"
+            //Se modifica el placeholder
+              placeholder="Ingrese su nombre"
               className="input"
               name="nombre"
               minLength={2}
@@ -126,7 +129,7 @@ const FormRegister = () => {
           <Form.Group className='col-md-6 mt-2'>
             <Form.Label>Apellido</Form.Label>
             <Form.Control
-              placeholder="Ingrese nombre del Usuario"
+              placeholder="Ingrese su apellido"
               className="input"
               name="apellido"
               minLength={2}
@@ -155,10 +158,10 @@ const FormRegister = () => {
               {errors.apellido?.message}
             </Form.Text>
           </Form.Group>
-          <Form.Group className='col-12 mt-2'>
+          <Form.Group className='col-12 mt-3'>
             <Form.Label>Contraseña</Form.Label>
             <Form.Control
-              placeholder="Ingrese nombre del Usuario"
+              placeholder="Ingrese una contraseña"
               type="password"
               name="password"
               minLength={8}
@@ -223,6 +226,7 @@ const FormRegister = () => {
             <Button type="submit" variant="outline-dark">Registrar</Button>
           </div>
         </Form>
+        </div>
       </div>
     </>
   )
