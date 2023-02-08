@@ -27,7 +27,7 @@ const ModalMod = ({show, handleClose, id, nombre, modalAux}) => {
   }
   return (
     <>
-      <Modal className="modalAM"size="lg" show={show} onHide={handleClose}>
+      <Modal className="modalAM" size="lg" show={show} onHide={handleClose}>
         <Modal.Header closeButton closeVariant='white'>
           <Modal.Title>{nombre}</Modal.Title>
         </Modal.Header>
