@@ -7,6 +7,8 @@ import AdminMenus from './pages/Admin/AdminMenus';
 import AdminPedidos from './pages/Admin/AdminPedidos';
 import AdminUsuarios from './pages/Admin/AdminUsuarios';
 import Inicio from './pages/Inicio/Inicio';
+import Categoria from './pages/Categoria/Categoria';
+
 
 
 function App() {
@@ -14,13 +16,16 @@ function App() {
 
     <>
      <Navbar title={'Restaurante Rolling'} />
-     <Inicio />
+    
       <Routes>
         <Route path='/admin' element={<Admin></Admin>}/>
         <Route path='/adminMenus' element={<AdminMenus/>}/>
         <Route path='/adminPedidos' element={<AdminPedidos/>}/>
         <Route path='/adminUsuarios' element={<AdminUsuarios/>}/>
         <Route path='/registrarUsuario' element={<FormRegister/>}/>
+        <Route path='/' element={<Inicio/>}/>
+        <Route path='/Categoria' element={<Categoria/>}/>
+    
       </Routes>
     </>
   );
