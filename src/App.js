@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Footer from './components/Footer/Footer';
 import './pages/Inicio/inicio.css'
 import FormRegister from './components/FormRegister/FormRegister';
 import Navbar from './components/Navbar/Navbar';
@@ -26,6 +28,7 @@ function App() {
         <Route path='/' element={<Inicio/>}/>
         <Route path='/Categoria' element={<Categoria/>}/>
       </Routes>
+      <Footer />
     </>
   );
 }
