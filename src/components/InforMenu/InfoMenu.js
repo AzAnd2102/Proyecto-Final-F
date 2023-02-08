@@ -20,7 +20,7 @@ const InfoMenu = (props) => {
     <>
       <div className='row m-0 p-0'>
         <div className='col-md-5 p-1 mt-2 d-flex justify-content-center'>
-          <img src={datosMenu.imagen} className="w-75" alt="..." />
+          <img src={datosMenu.imagen} className="card-img-top" alt="..." />
         </div>
         <div className='col-md-7 p-1 mt-2'>
           <p className='fw-bold fs-4'>{datosMenu.categoria}</p>

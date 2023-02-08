@@ -179,7 +179,7 @@ const FormModMenu = (props) => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números y Espacios'
                 }
             })}
@@ -196,7 +196,7 @@ const FormModMenu = (props) => {
             {...register('categoria')}>
             <option value="Hamburguesa">Hamburguesa</option>
             <option value="Pizza">Pizza</option>
-            <option value="Empanadas">Empanadas</option>
+            <option value="Ensaladas">Ensaladas</option>
             <option value="Bebida con Alcohol">Bebida con Alcohol</option>
             <option value="Bebida sin Alcohol">Bebida sin Alcohol</option>
           </Form.Select>
@@ -228,7 +228,7 @@ const FormModMenu = (props) => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números, Comas y Espacios'
                 }
             })}
