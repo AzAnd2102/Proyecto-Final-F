@@ -6,7 +6,7 @@ import './categoria.css'
 const Categoria = () => {
   return (
     <>
-    <CardCategoria />
+      <CardCategoria />
     </>
   )
 }

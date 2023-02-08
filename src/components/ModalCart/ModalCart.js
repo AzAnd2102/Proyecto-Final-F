@@ -24,7 +24,7 @@ const ModalCart = () => {
   let pedidoID = localStorage.getItem('pedidoId');
 
   datos.map(menu => {
-    if (menu.pedidoID === pedidoID && menu.estado === "seleccionado") {
+    if (menu.pedidoID === pedidoID && menu.estado === "Seleccionado") {
       total = total + menu.precio;
       comida[i]=menu;
       i++;
@@ -119,10 +119,10 @@ const ModalCart = () => {
   }
 
   return (
-    <div className="cart-modal">
+    <div className="cart-modal z-3">
       <div className="cart-modal-content">
         {datos.map((item) => (
-          item.pedidoID === pedidoID && item.estado === "seleccionado"?
+          item.pedidoID === pedidoID && item.estado === "Seleccionado"?
             <div className="food-content">
               <div className="food-icon">
                 {item.categoria === "Hamburguesa" ?<img src={burger} alt="food" className='imagen-Food m-2 w-25'/> : item.categoria === "Pizza" ? <img src={pizza} alt="food" className='imagen-Food m-2 w-25'/>: null} 
@@ -140,12 +140,12 @@ const ModalCart = () => {
               </button>
             </div>: null
         ))}
-        <div className='d-flex justify-content-end mt-3'>
+        <div className='position-relative mt-3'>
           <span className='fw-bold'> Total = ${total}</span>
+          { total > 0 ? 
+          <Button type="button" size="sm" className='position-absolute bottom-0 end-0' variant="outline-danger" onClick={realizarPedido}>Pedir</Button> : null}
         </div>
-        { total > 0 ? <div className='col-12 mt-1 d-flex justify-content-end'>
-          <Button type="button" size="sm" variant="outline-danger" onClick={realizarPedido}>Pedir</Button>
-        </div> : null}
+        
       </div>
     </div>
   );

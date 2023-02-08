@@ -25,7 +25,6 @@ function App() {
         <Route path='/registrarUsuario' element={<FormRegister/>}/>
         <Route path='/' element={<Inicio/>}/>
         <Route path='/Categoria' element={<Categoria/>}/>
-    
       </Routes>
     </>
   );
