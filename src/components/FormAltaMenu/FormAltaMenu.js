@@ -50,6 +50,7 @@ const FormAltaMenu = () => {
               "Content-Type" : "application/json"
             }
           })
+          const resp = await respuesta.json()
 
           await swalWithBootstrapButtons.fire(
             'Agregado!',
@@ -165,7 +166,7 @@ const FormAltaMenu = () => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números y Espacios'
                 }
             })}
@@ -181,7 +182,7 @@ const FormAltaMenu = () => {
             {...register('categoria')}>
             <option value="Hamburguesa">Hamburguesa</option>
             <option value="Pizza">Pizza</option>
-            <option value="Empanadas">Empanadas</option>
+            <option value="Ensaladas">Ensaladas</option>
             <option value="Bebida con Alcohol">Bebida con Alcohol</option>
             <option value="Bebida sin Alcohol">Bebida sin Alcohol</option>
           </Form.Select>
@@ -196,7 +197,7 @@ const FormAltaMenu = () => {
             className="input"
             name="ingredientes"
             minLength={2}
-            maxLength={600}
+            maxLength={300}
             {
               ...register('ingredientes',{
                 required: {
@@ -204,7 +205,7 @@ const FormAltaMenu = () => {
                   message: 'Campo requerido'
                 }, 
                 maxLength: {
-                  value: 600,
+                  value: 300,
                   message: 'Debe ser menor a 300'
                 },
                 minLength: {
@@ -212,7 +213,7 @@ const FormAltaMenu = () => {
                   message: 'Debe ser mayor a 2'
                 },
                 pattern: { 
-                  value: /^[A-Za-z0-9\s,]+$/i,
+                  value: /^[a-z0-9A-Z\u00C0-\u017F\s,.]+$/i,
                   message: 'Este campo solo acepta Letras, Números, Comas y Espacios'
                 }
             })}
@@ -239,7 +240,7 @@ const FormAltaMenu = () => {
                   message: "La imagen es requerida"
                 }, 
                 maxLength: {
-                  value: 300,
+                  value: 500,
                   message: "El campo debe tener menos de 500 caracteres"
                 },
                 minLength: {
