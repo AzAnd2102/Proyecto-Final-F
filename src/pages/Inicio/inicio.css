@@ -1,0 +1,24 @@
+.card-title {
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.form {
+  width: 70%;
+  margin-left: 12rem;
+}
+
+.titulo {
+  padding-top: 5px;
+  text-align: center;
+}
+
+
+.img-Inicio{
+  width: 100%;
+  height: 50vw;
+}
+
+.cursor{
+  cursor: pointer;
+}
