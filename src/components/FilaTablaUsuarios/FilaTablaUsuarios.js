@@ -53,7 +53,6 @@ function FilaTablaUsuarios({id,email,nombre,apellido,estado,rol}) {
         }
       })
       const usuarioBorrado = await respuesta.json();
-      console.log(usuarioBorrado)
       await swalWithBootstrapButtons.fire(
         'Borrado!',
         'El usuario fue eliminado',

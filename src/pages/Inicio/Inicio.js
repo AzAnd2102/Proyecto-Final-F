@@ -76,7 +76,7 @@ const Inicio = () => {
                   </Form.Group>
                 </div>
                 <div className='col-4 col-md-2'>
-                  <Button type="submit" variant="outline-light"><i class="bi bi-search"></i></Button>
+                  <Button type="submit" variant="outline-light"><i className="bi bi-search"></i></Button>
                 </div>
               </Form>
             </div>

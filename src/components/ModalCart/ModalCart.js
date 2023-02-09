@@ -70,7 +70,6 @@ const ModalCart = () => {
     if (bandera) {
         const respuesta = await fetch(`${baseURL}/carrito/borrarCarrito/${id}`,{   method: 'DELETE'})
       const menuBorrado = await respuesta.json();
-      console.log(menuBorrado)
       await swalWithBootstrapButtons.fire(
         'Borrado!',
         'El menú fue eliminado',

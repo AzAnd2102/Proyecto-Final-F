@@ -65,7 +65,6 @@ function FilaTablaPedidos({id,idUsuario,carrito,monto,fecha,estado}) {
         }
       })
       const pedidoModificado = await respuesta.json();
-      console.log(pedidoModificado)
       await swalWithBootstrapButtons.fire(
         'Entregado!',
         'El pedido fue entregado',

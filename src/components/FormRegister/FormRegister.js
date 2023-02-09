@@ -71,7 +71,6 @@ const FormRegister = () => {
         let today = new Date();
         let now = today.toLocaleString();
         let tamPed = (pedidos.length) + 1;
-        console.log(user)
         localStorage.setItem('rol', user.nuevoUsuario.rol)
         localStorage.setItem('userId', user.nuevoUsuario._id)
         localStorage.setItem('pedidoId', `pedido-${tamPed}-${now}`)
