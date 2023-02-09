@@ -57,7 +57,6 @@ const FormRegister = () => {
           'error'
         )
         e.target.reset();
-        window.location.reload();
 
       } else {
         await swalWithBootstrapButtons.fire(
@@ -76,7 +75,6 @@ const FormRegister = () => {
         localStorage.setItem('pedidoId', `pedido-${tamPed}-${now}`)
         localStorage.setItem('token',user.token)
         e.target.reset();
-        window.location.reload();
         window.location.href = "/";
       }
     }
@@ -84,7 +82,7 @@ const FormRegister = () => {
 
   return (
     <>
-      <div className='w-100 m-auto'>
+      <div className='w-100 m-auto mb-5'>
         <div className='d-flex justify-content-center mt-5'>
           <img className=' image-logo' src={logo} alt='modal-logo'/>
         </div>
@@ -223,7 +221,7 @@ const FormRegister = () => {
               {errors.email?.message}
             </Form.Text>
           </Form.Group>
-          <div className='col-12 mt-4 d-flex justify-content-end'>
+          <div className='col-12 mt-4 d-flex justify-content-end mb-5'>
             <Button type="submit" variant="outline-dark">Registrar</Button>
           </div>
         </Form>

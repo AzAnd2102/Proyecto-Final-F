@@ -59,7 +59,6 @@ function FilaTablaUsuarios({id,email,nombre,apellido,estado,rol}) {
         'success'
       )
 
-      window.location.reload();
     } 
     
   }

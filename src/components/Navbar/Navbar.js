@@ -8,6 +8,7 @@ import cerrar_Sesion from "../../assets/icons/cerrar-sesion.png";
 import admin from "../../assets/icons/admin.png"
 import ModalLogin from "../ModalLogin/ModalLogin";
 import ModalCart from "../ModalCart/ModalCart";
+import {Link} from "react-router-dom";
 
 
 const Navbar = () => {
@@ -32,16 +33,9 @@ const Navbar = () => {
   let rol = localStorage.getItem('rol');
 
   const cerrarSesion = () =>{
-    window.location.href = "/";
     localStorage.clear();
   }
 
-  const redireccion = () => {
-    window.location.href = "/admin";
-  }
-  const redireccionCasa = () => {
-    window.location.href = "/";
-  }
 
 
   return (
@@ -59,16 +53,16 @@ const Navbar = () => {
                 {token ? null : <img className='logo-usuario mx-2' src={usuario} alt='usuario'/>}
               </div>
               <div className="cerrarSesion" onClick={cerrarSesion}>
-                {token ? <img className='logo-usuario mx-2' src={cerrar_Sesion} alt='usuario'/> : null}
+                {token ? <Link className='text-decoration-none text-dark logo-usuario ' to='/'><img className='logo-usuario mx-2' src={cerrar_Sesion} alt='usuario'/></Link> : null}
               </div>
               <div className="casa">
-                {rol === "admin" ? <img className='logo-admin nav-icons-size mx-2' src={casa} alt='casa' onClick={redireccionCasa}/> : null}
+                {rol === "admin" ? <Link className='text-decoration-none text-dark logo-usuario ' to='/'><img className='logo-usuario mx-2' src={casa} alt='usuario'/></Link> : null}
               </div>  
-              <div className="admin">
-                {rol === "admin" ? <img className='logo-admin mx-2' src={admin} alt='buscar' onClick={redireccion}/> : null}
+              <div className="">
+                {rol === "admin" ? <Link className='text-decoration-none text-dark logo-usuario ' to='/admin'><img className='logo-usuario mx-2' src={admin} alt='usuario'/></Link> : null}
               </div> 
               <div className="modal-carro" onClick={handleShowModalCart}>
-                {token ? <img className='logo-carro mx-2' src={carro} alt='carro'/> : null}
+                {token && rol !== "admin" ? <img className='logo-carro mx-2' src={carro} alt='carro'/> : token && rol === "admin" ? <img className='logo-usuario mx-2' src={carro} alt='carro'/> : null}
                 {showCartModal ? <ModalCart /> : null}
               </div>
             

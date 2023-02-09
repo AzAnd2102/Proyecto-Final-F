@@ -68,7 +68,6 @@ function FormModUsuario({id}) {
           'Cada usuario debe contener un correo distinto, por favor respete eso.',
           'error'
         )
-        window.location.reload();
       } else {
         await swalWithBootstrapButtons.fire(
           'Modificado!',
@@ -76,7 +75,6 @@ function FormModUsuario({id}) {
           'success'
         )
 
-        window.location.reload();
       }
     }
   }

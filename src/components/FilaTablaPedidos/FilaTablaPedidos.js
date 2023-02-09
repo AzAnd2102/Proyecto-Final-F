@@ -71,7 +71,6 @@ function FilaTablaPedidos({id,idUsuario,carrito,monto,fecha,estado}) {
         'success'
       )
 
-      window.location.reload();
     } 
     
   }

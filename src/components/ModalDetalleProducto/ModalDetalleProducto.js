@@ -45,7 +45,6 @@ const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, i
           "Content-Type" : "application/json"
         }
       })
-      
       window.location.reload();
     }else{
       await Swal.fire(

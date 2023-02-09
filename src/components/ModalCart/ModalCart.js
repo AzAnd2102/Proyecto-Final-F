@@ -15,8 +15,8 @@ const ModalCart = () => {
   let total = 0;
   let i=0;
   let comida = [];
+
   const obtenerDatos = async () => {
-    const baseURL = process.env.REACT_APP_API_URL;
     const respuesta = await fetch(`${baseURL}/carrito/obtenerCarrito`)
     const carrito = await respuesta.json()
     setDatos(carrito)
@@ -68,7 +68,7 @@ const ModalCart = () => {
     let token = localStorage.getItem('token');
 
     if (bandera) {
-        const respuesta = await fetch(`${baseURL}/carrito/borrarCarrito/${id}`,{   method: 'DELETE'})
+      const respuesta = await fetch(`${baseURL}/carrito/borrarCarrito/${id}`,{   method: 'DELETE'})
       const menuBorrado = await respuesta.json();
       await swalWithBootstrapButtons.fire(
         'Borrado!',
@@ -99,11 +99,6 @@ const ModalCart = () => {
         "Content-Type" : "application/json"
       }
     })
-    await Swal.fire(
-      'Pedido enviado!',
-      '¡Tu pedido comenzó a preparse!',
-      'success'
-    )
 
     comida.forEach(plato => {
       fetch(`${baseURL}/carrito/modificarCarrito/${plato._id}`,{
@@ -117,6 +112,12 @@ const ModalCart = () => {
       })
     })
 
+    await Swal.fire(
+      'Pedido enviado!',
+      '¡Tu pedido comenzó a preparse!',
+      'success'
+    )
+
     window.location.reload();
   }
 
@@ -127,7 +128,8 @@ const ModalCart = () => {
           item.pedidoID === pedidoID && item.estado === "Seleccionado"?
             <div className="food-content">
               <div className="food-icon">
-                {item.categoria === "Hamburguesa" ? <img src={burger} alt="food" className='imagen-Food m-2 w-25'/> 
+                {
+                    item.categoria === "Hamburguesa" ? <img src={burger} alt="food" className='imagen-Food m-2 w-25'/> 
                   : item.categoria === "Pizza" ? <img src={pizza} alt="food" className='imagen-Food m-2 w-25'/> 
                   : item.categoria === "Ensaladas" ? <img src={ensalada} alt="food" className='imagen-Food m-2 w-25'/> 
                   : item.categoria === "Bebida con Alcohol" ? <img src={coctel} alt="food" className='imagen-Food m-2 w-25'/> 

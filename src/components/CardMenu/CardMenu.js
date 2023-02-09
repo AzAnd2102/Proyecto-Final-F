@@ -57,7 +57,6 @@ const Card =(props) => {
         'El menu fue eliminado',
         'success'
       )
-      window.location.reload();
     } 
     
   }
