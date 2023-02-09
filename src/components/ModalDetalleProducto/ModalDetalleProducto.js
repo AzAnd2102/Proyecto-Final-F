@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 
 const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, ingredientes, precio}) => {
   const {register, formState: { errors }, handleSubmit} = useForm();
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
 
   const procesarCarrito = async (data) =>{
     let arrayIngredientes = [];

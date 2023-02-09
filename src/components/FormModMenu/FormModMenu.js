@@ -7,7 +7,7 @@ let ingredientes = '';
 const FormModMenu = (props) => {
   
   const {register, formState: { errors }, handleSubmit} = useForm();
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
   const [datosMenu, setDatosMenu] = useState([]);
 
    const obtenerDatos = async () => {
@@ -247,7 +247,7 @@ const FormModMenu = (props) => {
             className="input"
             name="imagen"
             minLength={2}
-            maxLength={500}
+            maxLength={600}
             defaultValue={datosMenu.imagen}
             {
               ...register('imagen',{
@@ -256,16 +256,16 @@ const FormModMenu = (props) => {
                   message: "La imagen es requerida"
                 }, 
                 maxLength: {
-                  value: 300,
-                  message: "El campo debe tener menos de 500 caracteres"
+                  value: 600,
+                  message: "El campo debe tener menos de 600 caracteres"
                 },
                 minLength: {
                   value: 2,
                   message: "Se requiere más de 2 caracteres"
                 },
                 pattern: { 
-                  value: /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/i,
-                  message: "La imagen es requerida 4"
+                  value: /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/i,
+                  message: "Este campo solo acepta Links"
                 }
             })}
           ></Form.Control>

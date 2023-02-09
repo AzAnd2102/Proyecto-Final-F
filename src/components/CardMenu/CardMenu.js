@@ -6,7 +6,7 @@ import Swal from 'sweetalert2'
 
 const Card =(props) => {
 
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);

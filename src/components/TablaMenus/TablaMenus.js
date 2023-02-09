@@ -6,7 +6,7 @@ const TablaMenus = () => {
   const [datos, setDatos] = useState([]);
 
   const obtenerDatos = async () => {
-    const baseURL = 'http://localhost:8000';
+    const baseURL = process.env.REACT_APP_API_URL;
     const respuesta = await fetch(`${baseURL}/menus/obtenerMenus`)
     const menus = await respuesta.json()
 

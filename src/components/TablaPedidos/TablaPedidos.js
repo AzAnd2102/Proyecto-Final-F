@@ -6,7 +6,7 @@ function TablaPedidos() {
   const [datos, setDatos] = useState([]);
 
   const obtenerDatos = async () => {
-    const baseURL = 'http://localhost:8000';
+    const baseURL = process.env.REACT_APP_API_URL;
     const respuesta = await fetch(`${baseURL}/pedidos/obtenerPedidos`)
     const usuarios = await respuesta.json()
 
@@ -17,7 +17,7 @@ function TablaPedidos() {
 
   return (
     <div className='container mt-3'>
-      <Table responsive size="sm">
+      <Table responsive size="sm" className='mb-5'>
         <thead variant="dark">
           <tr>
             <th>NroPedido</th>

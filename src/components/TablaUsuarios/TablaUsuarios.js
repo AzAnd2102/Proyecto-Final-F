@@ -6,7 +6,7 @@ function TablaUsuarios() {
   const [datos, setDatos] = useState([]);
 
   const obtenerDatos = async () => {
-    const baseURL = 'http://localhost:8000';
+    const baseURL = process.env.REACT_APP_API_URL;
     const respuesta = await fetch(`${baseURL}/usuarios/obtenerUsuarios`)
     const usuarios = await respuesta.json()
 
@@ -16,8 +16,8 @@ function TablaUsuarios() {
   useEffect(()=>{obtenerDatos()},[])
 
   return (
-    <div className='container mt-3'>
-      <Table responsive size="sm">
+    <div className='container mt-3 mb-5'>
+      <Table responsive size="sm" className='mb-5'>
         <thead>
           <tr>
             <th>Id</th>

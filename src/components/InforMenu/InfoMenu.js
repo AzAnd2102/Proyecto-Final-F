@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 let ingredientes = '';
 
 const InfoMenu = (props) => {
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
   const [datosMenu, setDatosMenu] = useState([]);
 
    const obtenerDatos = async () => {

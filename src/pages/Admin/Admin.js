@@ -14,19 +14,19 @@ function Admin() {
         <div className="card animate__animated animate__fadeInLeft m-5 col-lg-4 col-12" style={{width: "18rem"}}>
           <img src="https://cdn-icons-png.flaticon.com/512/3246/3246812.png" className="card-img-top" alt="..."/>
           <div className="card-body">
-            <h5 className="card-title text-center"><Link className='Link' to='/adminPedidos'>Pedidos</Link></h5>
+            <h5 className="card-title text-center p-0"><Link className='Link' to='/adminPedidos'>Pedidos</Link></h5>
           </div>
         </div>
         <div className="card animate__animated animate__fadeInLeft m-5 col-lg-4 col-12" style={{width: "18rem"}}>
           <img src="https://cdn-icons-png.flaticon.com/512/1046/1046747.png" className="card-img-top" alt="..."/>
           <div className="card-body">
-            <h5 className="card-title text-center"><Link className='Link' to='/adminMenus'>Menu</Link></h5>
+            <h5 className="card-title text-center p-0"><Link className='Link' to='/adminMenus'>Menu</Link></h5>
           </div>
         </div>
         <div className="card animate__animated animate__fadeInLeft m-5 col-lg-4 col-12" style={{width: "18rem"}}>
           <img src="https://cdn-icons-png.flaticon.com/512/554/554795.png" className="card-img-top" alt="..."/>
           <div className="card-body">
-            <h5 className="card-title text-center"><Link className='Link' to='/adminUsuarios'>Usuarios</Link></h5>
+            <h5 className="card-title text-center p-0"><Link className='Link' to='/adminUsuarios'>Usuarios</Link></h5>
           </div>
         </div>
       </div>

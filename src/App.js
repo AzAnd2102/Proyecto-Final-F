@@ -17,18 +17,20 @@ function App() {
   return (
 
     <>
-     <Navbar title={'Restaurante Rolling'} />
-    
-      <Routes>
-        <Route path='/admin' element={<Admin></Admin>}/>
-        <Route path='/adminMenus' element={<AdminMenus/>}/>
-        <Route path='/adminPedidos' element={<AdminPedidos/>}/>
-        <Route path='/adminUsuarios' element={<AdminUsuarios/>}/>
-        <Route path='/registrarUsuario' element={<FormRegister/>}/>
-        <Route path='/' element={<Inicio/>}/>
-        <Route path='/Categoria' element={<Categoria/>}/>
-      </Routes>
-      <Footer />
+      <Navbar title={'Restaurante Rolling'} />
+      <div className='mb-5'>
+        <Routes>
+          <Route path='/admin' element={<Admin></Admin>}/>
+          <Route path='/adminMenus' element={<AdminMenus/>}/>
+          <Route path='/adminPedidos' element={<AdminPedidos/>}/>
+          <Route path='/adminUsuarios' element={<AdminUsuarios/>}/>
+          <Route path='/registrarUsuario' element={<FormRegister/>}/>
+          <Route path='/' element={<Inicio/>}/>
+        </Routes>
+      </div>
+      <div className='position-relative margenFooter'>
+        <Footer />
+      </div>
     </>
   );
 }

@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 const FormRegister = () => {
   const {register, formState: { errors }, handleSubmit} = useForm();
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
 
   const procesarFormulario = async (data, e) => {
     let bandera = false;
@@ -49,6 +49,7 @@ const FormRegister = () => {
         }
       })
 
+
       if (respuesta.status === 400) {
         await swalWithBootstrapButtons.fire(
           'El usuario ya existe!',
@@ -70,6 +71,7 @@ const FormRegister = () => {
         let today = new Date();
         let now = today.toLocaleString();
         let tamPed = (pedidos.length) + 1;
+        console.log(user)
         localStorage.setItem('rol', user.nuevoUsuario.rol)
         localStorage.setItem('userId', user.nuevoUsuario._id)
         localStorage.setItem('pedidoId', `pedido-${tamPed}-${now}`)

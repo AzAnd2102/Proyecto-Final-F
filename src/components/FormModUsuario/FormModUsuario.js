@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 function FormModUsuario({id}) {
   
   const {register, formState: { errors }, handleSubmit} = useForm();
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
   const [datosUsuario, setDatosUsuario] = useState([]);
 
    const obtenerDatos = async () => {

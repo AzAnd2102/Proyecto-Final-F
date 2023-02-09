@@ -3,17 +3,20 @@ import "./modalCart.css";
 import burger from "../../assets/icons/hamburguesa.png";
 import pizza from "../../assets/icons/pizza.png"
 import borrar from "../../assets/icons/borrar.png";
+import ensalada from '../../assets/icons/ensalada.png'
+import soda from '../../assets/icons/soda.png'
+import coctel from '../../assets/icons/coctel.png'
 import Swal from 'sweetalert2';
 import { Button } from 'react-bootstrap';
 
 const ModalCart = () => {
   const [datos, setDatos] = useState([]);
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
   let total = 0;
   let i=0;
   let comida = [];
   const obtenerDatos = async () => {
-    const baseURL = 'http://localhost:8000';
+    const baseURL = process.env.REACT_APP_API_URL;
     const respuesta = await fetch(`${baseURL}/carrito/obtenerCarrito`)
     const carrito = await respuesta.json()
     setDatos(carrito)
@@ -125,7 +128,12 @@ const ModalCart = () => {
           item.pedidoID === pedidoID && item.estado === "Seleccionado"?
             <div className="food-content">
               <div className="food-icon">
-                {item.categoria === "Hamburguesa" ?<img src={burger} alt="food" className='imagen-Food m-2 w-25'/> : item.categoria === "Pizza" ? <img src={pizza} alt="food" className='imagen-Food m-2 w-25'/>: null} 
+                {item.categoria === "Hamburguesa" ? <img src={burger} alt="food" className='imagen-Food m-2 w-25'/> 
+                  : item.categoria === "Pizza" ? <img src={pizza} alt="food" className='imagen-Food m-2 w-25'/> 
+                  : item.categoria === "Ensaladas" ? <img src={ensalada} alt="food" className='imagen-Food m-2 w-25'/> 
+                  : item.categoria === "Bebida con Alcohol" ? <img src={coctel} alt="food" className='imagen-Food m-2 w-25'/> 
+                  :  <img src={soda} alt="food" className='imagen-Food m-2 w-25'/> 
+                } 
                 <div>
                   <span className='fw-bold'>{item.nombrePlato}</span>
                   <p>${item.precio}</p>

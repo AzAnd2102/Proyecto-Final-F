@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import ModalMod from '../ModalMod/ModalMod';
 
 function FilaTablaPedidos({id,idUsuario,carrito,monto,fecha,estado}) {
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
 
   const [show, setShow] = useState(false);
 

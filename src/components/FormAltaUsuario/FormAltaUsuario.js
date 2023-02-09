@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 
 function FormAltaUsuario() {
   const {register, formState: { errors }, handleSubmit} = useForm();
-  const baseURL = 'http://localhost:8000';
+  const baseURL = process.env.REACT_APP_API_URL;
 
   const procesarFormulario = async (data, e) => {
     let bandera = false;
@@ -48,15 +48,25 @@ function FormAltaUsuario() {
         }
       })
 
-      if (respuesta.status === 400) {
+      if ( respuesta.status === 400) {
         await swalWithBootstrapButtons.fire(
           'El usuario ya existe!',
           'Encontramos que el email ya pertenece a un usuario existente, por favor ingrese otro',
           'error'
         )
+
         e.target.reset();
         window.location.reload();
 
+      } if (respuesta.status === 401) {
+        await swalWithBootstrapButtons.fire(
+          'Controle los campos',
+          'Hay algunos campos mal escritos, controlelos',
+          'error'
+        )
+
+        e.target.reset();
+        window.location.reload();
       } else {
         await swalWithBootstrapButtons.fire(
           'Agregado!',

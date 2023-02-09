@@ -6,7 +6,7 @@ import twitter from '../../assets/icons/twitter.png'
 
 const Footer = () => {
   return (
-    <div className='bg-dark text-white pb-2'>
+    <footer className='bg-dark text-white footer container-fluid mt-5 pb-2'>
       <div class="container-fluid text-center p-3">
         <p class="fs-5">&copy; Todos los derechos reservados :: <a class="text-white text-decoration-none" href='#Hamburguesas'>Restaurante Rolling</a> :: Argentina 2023</p>
       </div>
@@ -21,7 +21,7 @@ const Footer = () => {
           <img className='social-icon' src={twitter} alt='icon3' />
         </div>
       </div>
-    </div>
+    </footer>
   )
 }
 
