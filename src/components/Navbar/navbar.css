@@ -1,0 +1,45 @@
+.navbar-brand {
+  font-size: 30px;
+}
+
+.navbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+  box-shadow:
+  0.9px 22.6px 13.7px rgba(0, 0, 0, 0.027),
+  19px 500px 323px rgba(0, 0, 0, 0.07)
+;
+}
+
+.image-logo {
+  height: 60px;
+}
+
+.logo-usuario {
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo-buscar {
+  height: 40px;
+  cursor: pointer;
+}
+
+.logo-carro {
+  height: 40px;
+  cursor: pointer;
+  padding-left: 10px;
+  border-left: 1px solid black;
+}
+
+.logo-admin {
+  height: 40px;
+  cursor: pointer;
+}
+
+.nav-icons-size {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}

@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer/Footer';
+import './pages/Inicio/inicio.css'
+import FormRegister from './components/FormRegister/FormRegister';
+import Navbar from './components/Navbar/Navbar';
+import Admin from './pages/Admin/Admin';
+import AdminMenus from './pages/Admin/AdminMenus';
+import AdminPedidos from './pages/Admin/AdminPedidos';
+import AdminUsuarios from './pages/Admin/AdminUsuarios';
+import Inicio from './pages/Inicio/Inicio';
+import Categoria from './pages/Categoria/Categoria';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <>
+      <Navbar title={'Restaurante Rolling'} />
+      <div className='mb-5'>
+        <Routes>
+          <Route path='/admin' element={<Admin></Admin>}/>
+          <Route path='/adminMenus' element={<AdminMenus/>}/>
+          <Route path='/adminPedidos' element={<AdminPedidos/>}/>
+          <Route path='/adminUsuarios' element={<AdminUsuarios/>}/>
+          <Route path='/registrarUsuario' element={<FormRegister/>}/>
+          <Route path='/' element={<Inicio/>}/>
+        </Routes>
+      </div>
+      <div className='position-relative margenFooter'>
+        <Footer />
+      </div>
+    </>
   );
 }
 
