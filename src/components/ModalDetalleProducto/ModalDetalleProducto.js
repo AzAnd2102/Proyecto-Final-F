@@ -6,8 +6,9 @@ import ensalada from '../../assets/icons/ensalada.png'
 import soda from '../../assets/icons/soda.png'
 import coctel from '../../assets/icons/coctel.png'
 import { useForm } from 'react-hook-form';
-import { async } from 'q';
 import Swal from 'sweetalert2';
+
+
 
 const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, ingredientes, precio}) => {
   const {register, formState: { errors }, handleSubmit} = useForm();
@@ -19,15 +20,15 @@ const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, i
     let pedidoId = localStorage.getItem('pedidoId');
 
 
-    ingredientes.map(ingrediente=>{
-      let check = document.getElementById(ingrediente);
+    ingredientes.map(ingrediente => {
+      let check = document.getElementById(`check${ingrediente}`);
       if (check.checked) {
         arrayIngredientes[i] = check.name;
         i++;
       }
     })
 
-    if (i !== 0) {
+    if (arrayIngredientes.length !== 0) {
       let datos = {
         "nombrePlato" : nombre,
         "categoria" : categoria,
@@ -83,7 +84,7 @@ const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, i
                   <Form.Check 
                     type="checkbox"
                     name={ingrediente}
-                    id={ingrediente}
+                    id={`check${ingrediente}`}
                     label={ingrediente}
                   />
                 )}
