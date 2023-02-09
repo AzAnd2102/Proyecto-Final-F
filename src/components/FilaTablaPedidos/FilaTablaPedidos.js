@@ -41,6 +41,7 @@ function FilaTablaPedidos({id,idUsuario,carrito,monto,fecha,estado}) {
       cancelButtonText: 'No, cancelar',
       reverseButtons: true
     }).then((result) => {
+      
       if (result.isConfirmed) {
         bandera = true;
       } else if (
@@ -70,7 +71,7 @@ function FilaTablaPedidos({id,idUsuario,carrito,monto,fecha,estado}) {
         'El pedido fue entregado',
         'success'
       )
-
+      window.location.reload();
     } 
     
   }

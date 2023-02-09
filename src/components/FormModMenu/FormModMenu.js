@@ -68,6 +68,7 @@ const FormModMenu = (props) => {
         'El menu se modificó con éxito',
         'success'
       )
+      window.location.reload();
     }
   }
   

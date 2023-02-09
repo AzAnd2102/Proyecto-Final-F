@@ -33,6 +33,7 @@ const Navbar = () => {
   let rol = localStorage.getItem('rol');
 
   const cerrarSesion = () =>{
+    window.location.reload();
     localStorage.clear();
   }
 

@@ -59,6 +59,8 @@ const FormAltaMenu = () => {
           )
   
           e.target.reset();
+          window.location.reload();
+
         }
     }
 

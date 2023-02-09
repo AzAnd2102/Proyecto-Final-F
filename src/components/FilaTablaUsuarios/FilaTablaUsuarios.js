@@ -58,7 +58,8 @@ function FilaTablaUsuarios({id,email,nombre,apellido,estado,rol}) {
         'El usuario fue eliminado',
         'success'
       )
-
+      window.location.reload();
+      
     } 
     
   }

@@ -74,7 +74,8 @@ function FormModUsuario({id}) {
           'El usuario se modificó con éxito',
           'success'
         )
-
+        window.location.reload();
+        
       }
     }
   }

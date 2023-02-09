@@ -56,6 +56,8 @@ function FormAltaUsuario() {
         )
 
         e.target.reset();
+        window.location.reload();
+
 
       } if (respuesta.status === 401) {
         await swalWithBootstrapButtons.fire(
@@ -65,6 +67,8 @@ function FormAltaUsuario() {
         )
 
         e.target.reset();
+        window.location.reload();
+
       } else {
         await swalWithBootstrapButtons.fire(
           'Agregado!',
@@ -72,6 +76,8 @@ function FormAltaUsuario() {
           'success'
         )
         e.target.reset();
+        window.location.reload();
+
       }
     }
   }
