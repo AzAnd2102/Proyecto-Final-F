@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className='container-fluid d-flex justify-content-end'>
               <div className="modal-login" onClick={handleShow}>
-                {token ? null : <img className='logo-usuario mx-2' src={usuario} alt='usuario'/>}
+                {token ? null : <img className='logo-usuario' src={usuario} alt='usuario'/>}
               </div>
               <div className="cerrarSesion" onClick={cerrarSesion}>
                 {token ? <Link className='text-decoration-none text-dark logo-usuario ' to='/'><img className='logo-usuario mx-2' src={cerrar_Sesion} alt='usuario'/></Link> : null}

@@ -17,6 +17,7 @@
 .logo-usuario {
   height: 40px;
   cursor: pointer;
+  margin-right: -5px;
 }
 
 .logo-buscar {
