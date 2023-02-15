@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button, Form, Modal } from 'react-bootstrap';
 import burguer from '../../assets/icons/hamburguesa.png'
 import pizza from '../../assets/icons/pizza.png'
 import ensalada from '../../assets/icons/ensalada.png'
@@ -7,6 +6,9 @@ import soda from '../../assets/icons/soda.png'
 import coctel from '../../assets/icons/coctel.png'
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import { Form } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 
 
@@ -58,9 +60,7 @@ const ModalDetalleProducto = ({ show, handleClose, nombre, categoria, detalle, i
     
     <Modal size="lg" show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>
-          <span>{nombre}</span>
-        </Modal.Title>
+        <Modal.Title>{nombre}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit(procesarCarrito)}>
