@@ -122,7 +122,7 @@ const ModalCart = () => {
   }
 
   return (
-    <div className="cart-modal z-3">
+    <div className="cart-modal">
       <div className="cart-modal-content">
         {datos.map((item) => (
           item.pedidoID === pedidoID && item.estado === "Seleccionado"?
